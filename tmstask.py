@@ -23,15 +23,18 @@ def index():
         num1 = request.args.get('cid')
         num2 = request.args.get('tid')
         num3 = request.args.get('eid')
-        sq = """SELECT *FROM public.tms3"""
+        num1=int(num1)
+        num2=int(num2)
+        num3=int(num3)
+        sq = """SELECT * FROM public.tms3"""
         trn = pd.io.sql.read_sql(sq,con)
         #trn=pd.read_csv("tmsbhav.csv")
         cid=trn['cid']
         tid=trn['tid']
         eid=trn['eid']
         rc=trn['roc']
-        class_names = ['tid', 'cid', 'eid']
-        print(class_names)
+        #class_names = ['tid', 'cid', 'eid']
+        #print(class_names)
         X=np.array([cid,tid,eid]).T
         #X=X[:,1:3]
         #print(X)
