@@ -46,7 +46,7 @@ def index():
         # Predict the response for test dataset
         y_pred = reg.predict(z)
         y_pred=int(y_pred)
-        pythonDictionary = {'a':num1, 'b':num2, 'c':num3,'e':y_pred}
+        pythonDictionary = {'cid':num1, 'tid':num2, 'eid':num3,'roc':y_pred}
         return  json.dumps(pythonDictionary)
     except ValueError:
       return 'enter valid parameters'
